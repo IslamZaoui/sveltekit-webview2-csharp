@@ -1,0 +1,8 @@
+bin/
+obj/
+publish/
+*.dll
+*.exe
+*.pdb
+*.cache
+*.log
