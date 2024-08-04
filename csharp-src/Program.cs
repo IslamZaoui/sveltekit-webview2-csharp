@@ -13,11 +13,26 @@ static class Program
             #endif
         }
     }
+    public static StaticServer? Server { get; private set; }
 
     [STAThread]
     static void Main()
     {
         ApplicationConfiguration.Initialize();
+
+        if (!IsDebug)
+        {
+            int port = StaticServer.GetAvailablePort();
+            string wwwroot = Path.Combine(Application.StartupPath, "wwwroot");
+            Server = new StaticServer(wwwroot, port);
+            Server.Start();
+        }
+
         Application.Run(new MainForm());
+
+        if (!IsDebug)
+        {
+            Server?.Stop();
+        }
     }
 }

@@ -34,24 +34,17 @@ partial class MainForm
         // 
         // webView
         // 
-        webView.AllowExternalDrop = true;
-        webView.CreationProperties = null;
-        webView.DefaultBackgroundColor = Color.White;
         webView.Dock = DockStyle.Fill;
         webView.Name = "webView";
-        webView.TabIndex = 0;
-        webView.ZoomFactor = 1D;
         // 
         // MainForm
         // 
-        AutoScaleDimensions = new SizeF(7F, 15F);
-        AutoScaleMode = AutoScaleMode.Font;
         ClientSize = new Size(800, 450);
         Controls.Add(webView);
-        Name = "MainForm";
-        Text = "MainForm";
-        ((System.ComponentModel.ISupportInitialize)webView).EndInit();
-        ResumeLayout(false);
+        this.Name = "MainForm";
+        this.Text = "MainForm";
+        ((System.ComponentModel.ISupportInitialize)(webView)).EndInit();
+        this.ResumeLayout(false);
     }
 
     #endregion
